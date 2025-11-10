@@ -42,6 +42,8 @@ const (
 	DHash
 	// WHash is a enum value of the wavelet hash.
 	WHash
+	// DGHash is a enum value of the double gradient hash.
+	DGHash
 )
 
 // NewImageHash function creates a new image hash.

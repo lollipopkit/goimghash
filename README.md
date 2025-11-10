@@ -9,6 +9,7 @@ A image hashing library written in Go. ImageHash supports:
 * [Average hashing](http://www.hackerfactor.com/blog/index.php?/archives/432-Looks-Like-It.html)
 * [Difference hashing](http://www.hackerfactor.com/blog/index.php?/archives/529-Kind-of-Like-That.html)
 * [Perception hashing](http://www.hackerfactor.com/blog/index.php?/archives/432-Looks-Like-It.html)
+* [Double Gradient hashing](https://github.com/commonsmachinery/blockhash-rfc/blob/master/main.md) - An advanced version of gradient hashing that combines both horizontal and vertical gradient comparisons
 * [Wavelet hashing](https://fullstackml.com/wavelet-image-hash-in-python-3504fdd282b5) [TODO]
 
 ## Installation
@@ -38,6 +39,14 @@ func main() {
         hash2, _ = goimagehash.DifferenceHash(img2)
         distance, _ = hash1.Distance(hash2)
         fmt.Printf("Distance between images: %v\n", distance)
+
+        // Double Gradient Hash
+        dgHash1, _ := goimagehash.DoubleGradientHash(img1, 8, 8)
+        dgHash2, _ := goimagehash.DoubleGradientHash(img2, 8, 8)
+        distance, _ = dgHash1.Distance(dgHash2)
+        fmt.Printf("DoubleGradient distance between images: %v\n", distance)
+        fmt.Printf("DoubleGradient hash (base64): %s\n", dgHash1.ToBase64())
+
         width, height := 8, 8
         hash3, _ := goimagehash.ExtAverageHash(img1, width, height)
         hash4, _ := goimagehash.ExtAverageHash(img2, width, height)
@@ -56,6 +65,12 @@ func main() {
 ```
 
 ## Release Note
+### v1.2.0
+- Add Double Gradient hashing algorithm support
+- Add CLI tool with support for all hashing algorithms
+- Support for base64 output format (without padding)
+- Enhanced batch processing with duplicate detection
+
 ### v1.1.0
 - The performance of Perceptionhash is enhanced.
 
