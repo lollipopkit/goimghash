@@ -8,7 +8,7 @@ import (
 	_ "image/png"
 	"os"
 
-	"github.com/corona10/goimagehash"
+	"github.com/lollipopkit/goimagehash"
 	"github.com/spf13/cobra"
 )
 

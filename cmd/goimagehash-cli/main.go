@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/corona10/goimagehash/cmd/goimagehash-cli/commands"
+	"github.com/lollipopkit/goimagehash/cmd/goimagehash-cli/commands"
 )
 
 func main() {

@@ -9,8 +9,8 @@ import (
 	"image"
 	"sync"
 
-	"github.com/corona10/goimagehash/etcs"
-	"github.com/corona10/goimagehash/transforms"
+	"github.com/lollipopkit/goimagehash/etcs"
+	"github.com/lollipopkit/goimagehash/transforms"
 	"github.com/nfnt/resize"
 )
 

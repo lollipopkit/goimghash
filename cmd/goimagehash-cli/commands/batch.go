@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/corona10/goimagehash"
+	"github.com/lollipopkit/goimagehash"
 	"github.com/spf13/cobra"
 )
 
